@@ -7,6 +7,19 @@ from django.db.models import Sum
 from .models import Category,Regular_pizza,Sicilian_pizza,Topping,Sub,Pasta,Salad,Dinner_platter,Order,User_order,Order_counter
 
 # Create your views here.
+counter = Order_counter.objects.first()
+if counter == None:
+    set_counter = Order_counter(counter=1)
+    set_counter.save()
+superuser = User.objects.filter(is_superuser=True)
+if super_user.count() == 0:
+    superuser=User.objects.create_user("admin", "admin@admin.com", "AdminerAdminer")
+    superuser.is_superuser=True
+    superuser.is_staff=True
+    superuser.save()
+    set_superuser=User_order(user=superuser, order_number=counter.counter)
+    set_superuser.save()
+
 
 def index(request):
     return HttpResponse("Project 3: TODO")
