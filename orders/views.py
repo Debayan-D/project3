@@ -12,7 +12,7 @@ if counter == None:
     set_counter = Order_counter(counter=1)
     set_counter.save()
 superuser = User.objects.filter(is_superuser=True)
-if super_user.count() == 0:
+if superuser.count() == 0:
     superuser=User.objects.create_user("admin", "admin@admin.com", "AdminerAdminer")
     superuser.is_superuser=True
     superuser.is_staff=True
