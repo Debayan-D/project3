@@ -69,7 +69,7 @@ class User_order(models.Model):
     def __str__(self):
         return f"{self.user} - {self.order_number} - {self.status} Topping_allowance: {self.topping_allowance}"
 
-class Order(models.Model):
+class Order2(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     number=models.IntegerField()
     category=models.CharField(max_length=64,null=True)
