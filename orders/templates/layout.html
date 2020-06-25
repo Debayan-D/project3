@@ -21,7 +21,7 @@
             <small><a href="{% url 'orders_manager' user Order_number %}">Orders manager</a></small> |
             {% endif %}
             {% if not user.is_superuser %}
-            <small><a href="{% url 'my_orders' Order_number %}">My orders</a></small> |
+            <small><a href="{% url 'my_orders' Order_number %}">My orders</a></small>
             {% endif %}
             <small><a href="{% url 'logout' %}"> Log out&nbsp;</a></small>
         </h4>
